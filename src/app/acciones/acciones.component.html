@@ -1,0 +1,145 @@
+<app-menu></app-menu>
+
+<div class="imgfondo mt-0">
+
+    <div class="mb-5">
+        <br>
+        <p class="container text-white h1 py-5"> Encuentra las cotizaciones y ratios de las mejores empresas del mundo
+        </p>
+    </div>
+
+
+    <div class="container col-lg-3 py-5 px-md-5 bg-white border rounded contenedor shadow">
+
+        <div class="mb-4">
+            <p class="h1 mb-5">Buscar acciones.</p>
+        </div>
+
+        <form (ngSubmit)="buscalo()" novalidate #f="ngForm">
+            <div class="form-group">
+                <label for="ticker">Inserte el ticker de la acción: &nbsp;
+
+
+                    <i class="fas fa-info-circle" data-toggle="popover" title="Acciones disponibles"
+                        data-content="Solo disponibles las acciones del mercado estadounidense. Por ejemplo: AAPL, AMZN o MSFT"></i>
+
+                </label>
+
+                <input type="text" class="form-control" placeholder="Ejemplo: AAPL, AMZN, FB" id="ticker" name="ticker"
+                    [(ngModel)]="ticker" required>
+            </div>
+
+            <button class="btn boton shadow btn-block">
+                <i class="fas fa-search"></i> Buscar </button>
+        </form>
+
+        <p class="mt-5 text-center">
+            <span class="h1" id="resultadoprecio"></span>
+            <span class="h4" id="resultadodivisa"></span>
+            <br><br>
+            <span class="h4" id="resultadocambio"></span>
+        </p>
+
+        <hr class="mt-5">
+
+        <div class="row justify-content-between">
+            <div class="col">
+                Capitalización
+
+                <i class="fas fa-info-circle" data-toggle="popover" title="Capitalización bursátil"
+                    data-content="Es una medida económica que indica el valor total de todas las acciones de una empresa que coticen en bolsa. Es el valor total de todas las acciones de una empresa que cotiza en bolsa. Se calcula multiplicando el número de acciones que tiene en circulación por el precio de mercado."></i>
+
+            </div>
+            <div class="col">
+                <span class="float-right" id="cap"></span>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row justify-content-between">
+            <div class="col-5">
+                PER
+
+                <i class="fas fa-info-circle" data-toggle="popover" title="Price Earnings Ratio (PER)"
+                    data-content="Es la relación entre el precio de mercado de una compañía y sus beneficios. Se calcula dividiendo el valor de las acciones de una empresa, determinado en el mercado bursátil (capitalización bursátil) entre el beneficio neto anual después de impuestos de la empresa correspondiente. Cuanto más bajo es el PER, más barata está la empresa."></i>
+
+            </div>
+            <div class="col-2">
+                <span class="float-right" id="PER"></span>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row justify-content-between">
+            <div class="col-7">
+                Precio/Valor Contable
+
+                <i class="fas fa-info-circle" data-toggle="popover" title="Precio/Valor contable"
+                    data-content="Compara el valor de mercado de una empresa con su valor contable. Cuanto más bajo es el P/VC, más barata está la empresa. "></i>
+
+            </div>
+            <div class="col-2">
+                <span class="float-right" id="priceToBook"></span>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row justify-content-between">
+            <div class="col-7">
+                PEG
+
+                <i class="fas fa-info-circle" data-toggle="popover" title="PEG"
+                    data-content="Es el resultado de dividir el PER de la empresa entre la tasa de crecimiento de su beneficio por acción (BPA). Es deseable comprar empresas con un PEG lo más bajo posible."></i>
+
+            </div>
+            <div class="col-2">
+                <span class="float-right" id="peg"></span>
+            </div>
+        </div>
+
+        <hr>
+        <div class="row justify-content-between">
+            <div class="col-7">
+                Rentabilidad por dividendo
+
+                <i class="fas fa-info-circle" data-toggle="popover" title="Rentabilidad por dividendo"
+                    data-content="Es un ratio que indica la cantidad de euros que se recuperan de la inversión con el reparto de los dividendos."></i>
+
+            </div>
+            <div class="col-2">
+                <span class="float-right" id="yield"></span>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="mt-4 contenedorresultados container col-lg-4">
+
+        <p class="text-center my-5">
+
+            <span class="h1" id="resultadoprecio">
+            </span>
+
+            <span class="h4" id="resultadodivisa">
+            </span>
+
+            <span class="h4" id="resultadocambio">
+            </span>
+
+        </p>
+
+        <p class="text-left" id="PER"></p>
+        <p id="priceToBook"></p>
+
+    </div>
+
+    <div class="my-3">
+        <br>
+    </div>
+
+
+</div>

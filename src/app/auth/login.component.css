@@ -1,0 +1,7 @@
+.imagengrande{
+    background-image: url(src\assets\imgs\imagengrande1.png); 
+    height: 400px; 
+    background-repeat: no-repeat;
+    background-position: center, 0;
+   
+}

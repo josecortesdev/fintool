@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  font-family: 'Lato', sans-serif;
+}
+
+.imgfondo {
+  background-image: url(src\assets\imgs\imagengrande1.png);
+  background-repeat: no-repeat;
+  height: 400px;
+  background-position: center, 0;
+  /* horizontal centrar, vertical a 0 */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.linkmin {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+.menulink:hover {
+  text-decoration: none;
+  color: #00a49e;
+}
+
+.boton {
+  color: white;
+  background-color: #00a49e;
+}
+
+.boton:hover {
+  color: white;
+}
+

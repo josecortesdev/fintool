@@ -1,0 +1,392 @@
+<app-menu></app-menu>
+<!-- Incluyo el menú aquí y no en app.component.html porque necesito que vuelva a cargar para mostrar botones distintos -->
+
+<div class="imgfondo">
+
+    <div class="mb-5">
+        <br><br><br>
+    </div>
+
+    <div class="container  col-11 col-sm-7 justify-content-center bg-white border rounded shadow-lg py-5 px-md-5">
+        <div *ngIf="nombreUsuario" class="m-lg-5">
+
+            <div class="h1">Bienvenido {{nombreUsuario}} </div>
+            <div class="h5 mt-4">Puede acceder a la selección de ETFs procedentes de las gestoras con mayor ventaja
+                competitiva, fiscalmente eficientes (fondos de acumulación y gama UCITS), divisa en euros y un bajo
+                coste. </div>
+
+            <div class="mt-5 d-flex justify-content-center">
+                <button class="btn boton btn-block col-lg-4 shadow " routerLink="/lista">
+                    Ir a la lista de ETFs
+                </button>
+            </div>
+
+        </div>
+
+
+        <div *ngIf="!nombreUsuario" class="m-lg-5">
+            <p class="h1">Acceda a la selección de fondos cotizados</p>
+            <p class="h5 mt-5 font-weight-normal">
+                Procedentes de las gestoras con mayor ventaja competitiva, fiscalmente eficientes (fondos de acumulación
+                y gama UCITS), divisa en euros y un bajo coste.
+            </p>
+            <div class="d-flex justify-content-lg-center">
+
+                <div class="mt-4 d-flex flex-column flex-lg-row mb-1 col-lg-10">
+                    <div class="col d-flex justify-content-center mt-3">
+                        <button class="btn btn-outline-dark btn-block" routerLink="/login">
+                            Iniciar Sesión
+                        </button>
+                    </div>
+
+                    <div class="col d-flex justify-content-center mt-3">
+                        <button class="btn boton shadow btn-block" routerLink="/registro">
+
+                            Registrarse
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ÍNDICES -->
+
+    <!-- No borrar <div>Iconos diseñados por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div> -->
+    <div class="container mt-5 d-flex flex-column flex-lg-row pt-5 ">
+
+        <!-- ROW 1 -->
+        <div style="height: 120px" class="container col-10 col-sm-7 col-lg-3 mt-5 p-4 pb-5 bd-highlight shadow-lg">
+
+            <div class="row  h-50">
+                <div class="col-9">
+                    <img src="assets/imgs/united-states-of-america.png" style="max-width: 30px;">
+                    &nbsp;
+                    <b> S&P 500 </b>
+                </div>
+                <div class="col-3">
+                    <span class="float-right" id="sp500percent"></span>
+                </div>
+            </div>
+            <div class="row justify-content-start align-items-bottom mt-3">
+                <div class="col-4">
+                    <span class="h3" id="sp500"></span>
+                </div>
+                <div class="col-4">
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div style="height: 120px" class="container col-10 col-sm-7 col-lg-3 mt-5 p-4 pb-5 bd-highlight shadow-lg">
+
+            <div class="row h-50">
+                <div class="col-9">
+                    <img src="assets/imgs/united-states-of-america.png" style="max-width: 30px;">
+                    &nbsp;
+                    <b> IXIC </b>
+                </div>
+                <div class="col-3">
+                    <span class="float-right" id="nasdaqpercent"></span>
+                </div>
+            </div>
+            <div class="row justify-content-start align-items-bottom mt-3">
+                <div class="col-4">
+                    <span class="h3" id="nasdaq"></span>
+                </div>
+                <div class="col-4">
+
+                </div>
+            </div>
+        </div>
+
+
+        <div style="height: 120px" class="container col-10 col-sm-7 col-lg-3 mt-5 p-4 pb-5  bd-highlight shadow-lg">
+
+            <div class="row h-50">
+                <div class="col-9">
+                    <img src="assets/imgs/united-states-of-america.png" style="max-width: 30px;">
+                    &nbsp;
+                    <b> DJIA </b>
+                </div>
+                <div class="col-3">
+                    <span class="float-right" id="djpercent"></span>
+                </div>
+            </div>
+            <div class="row justify-content-start align-items-bottom mt-3">
+                <div class="col-4">
+                    <span class="h3" id="dj"></span>
+                </div>
+                <div class="col-4">
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!-- ROW 2 -->
+
+    <div class="container d-flex flex-column flex-lg-row  ">
+
+        <div style="height: 120px" class="container col-10 col-sm-7 col-lg-3 mt-5 p-4 pb-5  bd-highlight shadow-lg">
+
+            <div class="row h-50">
+                <div class="col-9">
+                    <img src="assets/imgs/united-kingdom.png" style="max-width: 30px;">
+                    &nbsp;
+                    <b> FTSE 100 </b>
+                </div>
+                <div class="col-3">
+                    <span class="float-right" id="ftse100percent"></span>
+                </div>
+            </div>
+            <div class="row justify-content-start align-items-bottom mt-3">
+                <div class="col-4">
+                    <span class="h3" id="ftse100"></span>
+                </div>
+                <div class="col-4">
+
+                </div>
+            </div>
+        </div>
+
+
+        <div style="height: 120px" class="container  col-10 col-sm-7 col-lg-3 mt-5 p-4 pb-5  bd-highlight shadow-lg">
+
+            <div class="row h-50">
+                <div class="col-9">
+                    <img src="assets/imgs/france.png" style="max-width: 30px;">
+                    &nbsp;
+                    <b> CAC 40 </b>
+                </div>
+                <div class="col-3">
+                    <span class="float-right" id="cac40percent"></span>
+                </div>
+            </div>
+            <div class="row justify-content-start align-items-bottom mt-3">
+                <div class="col-4">
+                    <span class="h3" id="cac40"></span>
+                </div>
+                <div class="col-4">
+
+                </div>
+            </div>
+        </div>
+
+
+        <div style="height: 120px" class="container col-10 col-sm-7 col-lg-3 mt-5 p-4 pb-5  bd-highlight shadow-lg">
+
+            <div class="row h-50">
+                <div class="col-9">
+                    <img src="assets/imgs/germany.png" style="max-width: 30px;">
+                    &nbsp;
+                    <b> DAX 30 </b>
+                </div>
+                <div class="col-3">
+                    <span class="float-right" id="daxpercent"></span>
+                </div>
+            </div>
+            <div class="row justify-content-start align-items-bottom mt-3">
+                <div class="col-4">
+                    <span class="h3" id="dax"></span>
+                </div>
+                <div class="col-4">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- ROW 3 -->
+
+    <div class="container d-flex flex-column flex-lg-row  ">
+
+        <div style="height: 120px" class="container col-10 col-sm-7 col-lg-3 mt-5 p-4 pb-5  bd-highlight shadow-lg">
+
+            <div class="row h-50">
+                <div class="col-9">
+                    <img src="assets/imgs/netherlands.png" style="max-width: 30px;">
+                    &nbsp;
+                    <b> AEX </b>
+                </div>
+                <div class="col-3">
+                    <span class="float-right" id="aexpercent"></span>
+                </div>
+            </div>
+            <div class="row justify-content-start align-items-bottom mt-3">
+                <div class="col-4">
+                    <span class="h3" id="aex"></span>
+                </div>
+                <div class="col-4">
+
+                </div>
+            </div>
+        </div>
+
+
+        <div style="height: 120px" class="container  col-10 col-sm-7 col-lg-3 mt-5 p-4 pb-5  bd-highlight shadow-lg">
+
+            <div class="row h-50">
+                <div class="col-9">
+                    <img src="assets/imgs/hong-kong.png" style="max-width: 25px;">
+                    &nbsp;
+                    <b> HSI </b>
+                </div>
+                <div class="col-3">
+                    <span class="float-right" id="hangsengpercent"></span>
+                </div>
+            </div>
+            <div class="row justify-content-start align-items-bottom mt-3">
+                <div class="col-4">
+                    <span class="h3" id="hangseng"></span>
+                </div>
+                <div class="col-4">
+
+                </div>
+            </div>
+        </div>
+
+
+        <div style="height: 120px" class="container col-10 col-sm-7 col-lg-3 mt-5 p-4 pb-5  bd-highlight shadow-lg">
+
+            <div class="row h-50">
+                <div class="col-9">
+                    <img src="assets/imgs/japan.png" style="max-width: 30px;">
+                    &nbsp;
+                    <b> NIKKEI 225 </b>
+                </div>
+                <div class="col-3">
+                    <span class="float-right" id="nikkei225percent"></span>
+                </div>
+            </div>
+            <div class="row justify-content-start align-items-bottom mt-3">
+                <div class="col-4">
+                    <span class="h3" id="nikkei225"></span>
+                </div>
+                <div class="col-4">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- COVID -->
+
+
+    <div class="mx-auto mt-5 pt-5 col-md-7 ">
+        <div class="mt-5 alert alert-dark bg-dark  text-white p-4" role="alert">
+            <span class="h4"><b> Los datos del coronavirus en España </b> </span>
+            <br><br>
+            <p class="h6">
+                Cifras totales: <span id="confirmed"></span> casos de coronavirus confirmados con prueba diagnóstica de
+                infección activa; Ha habido <span id="deaths"></span> muertos con test positivo y <span
+                    id="recovered"></span> recuperados a {{mifecha | date:'longDate' }}.
+            </p>
+        </div>
+    </div>
+
+
+
+    <!-- INFORMACIÓN DE LA APLICACIÓN -->
+
+    <div class="container mb-5 pt-2 pb-5">
+        <!-- Selección ETFs -->
+        <div class="container my-5 d-flex flex-column flex-lg-row">
+
+            <div class="d-flex align-items-center   justify-content-center  mt-5  col p-2">
+                <i class="display-1 far fa-newspaper"></i>
+
+            </div>
+
+            <div class="col-lg-8 p-2 h5 mt-5">
+                <span class="font-weight-bold h1 my-2"> Selección de fondos cotizados </span>
+                <br><br>
+                <p class="h5 font-weight-normal">
+                    Regístrese o inicie sesión para acceder a una <span class="font-weight-bold">selección de fondos
+                        cotizados</span> que cumplen una serie de requisitos: fiscalmente eficientes (fondos de
+                    acumulación y gama UCITS), divisa en euros, procedentes de las gestoras con mayor ventaja
+                    competitiva y un bajo coste. </p>
+                <p class="h5 font-weight-normal">
+                    Puede <b>discriminar</b> esta selección <b>añadiendo a su cartera</b> los fondos cotizados que
+                    desee.
+                </p>
+
+
+
+            </div>
+
+        </div>
+
+        <!-- Cotizaciones -->
+
+        <div class="container my-5 d-flex flex-column flex-lg-row">
+
+            <div class="d-flex align-items-center   justify-content-center  mt-5  col p-2">
+                <i class="display-1 far fa-chart-bar"></i>
+
+            </div>
+
+            <div class="col-lg-8 p-2 h5 mt-5">
+                <span class="font-weight-bold  h1 my-2"> Empresas </span>
+                <br><br>
+                <p class="h5 font-weight-normal">
+                    Puede revisar tanto las cotizaciones como los principales ratios fundamentales de las empresas más
+                    grandes del mundo en la sección de buscar acciones.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Calculadoras -->
+
+        <div class="container my-5 d-flex flex-column flex-lg-row">
+
+            <div class="d-flex align-items-center   justify-content-center  mt-5  col p-2">
+                <i class="display-1 far fa-plus-square"></i>
+            </div>
+
+            <div class="col-lg-8 p-2 h5 mt-5">
+                <span class="font-weight-bold  h1 my-2"> Calculadoras </span>
+                <br><br>
+                <p class="h5 font-weight-normal">
+                    Compruebe su rentabilidad con la calculadora que nos proporciona el <span class="font-weight-bold">
+                        porcentaje de cambio de una cotización </span>(a partir de la cotización pasada y reciente).
+                    Calcule el interés compuesto de sus inversiones con la calculadora de Interés compuesto.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Actualidad -->
+
+        <div class="container my-5 d-flex flex-column flex-lg-row">
+
+            <div class="d-flex align-items-center   justify-content-center  mt-5  col p-2">
+                <i class="display-1 fas fa-check-square"></i>
+
+            </div>
+
+            <div class="col-lg-8 p-2 h5 mt-5">
+                <span class="font-weight-bold  h1 my-2"> Actualidad </span>
+                <br><br>
+                <p class="h5 font-weight-normal">
+                    Consulte en esta página principal las cotizaciones de los <span
+                        class="font-weight-bold">índices</span> más usados y los datos del <span
+                        class="font-weight-bold">coronavirus</span> en España.
+                </p>
+            </div>
+
+        </div>
+
+    </div>

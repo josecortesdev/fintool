@@ -1,0 +1,61 @@
+<app-menu></app-menu>
+
+<div class="imgfondo mt-0">
+
+  <div class="mb-2">
+    <br>
+
+    <p class="container text-white h1 py-5"> Calcule el cambio de cotización y el interés compuesto </p>
+  </div>
+
+  <nav class="mt-md-5 container col-lg-8">
+    <div class="nav nav-tabs row d-flex justify-content-center" id="nav-tab" role="tablist">
+
+      <a class="nav-link col-sm-4 col-5 boton mx-2" id="nav-home-tab" data-bs-toggle="tab" role="tab"
+        aria-controls="nav-home" routerLink="/cotizacion">Cambio de cotización</a>
+
+      <a class="nav-link col-sm-4 col-5 bg-white mx-2" id="nav-profile-tab" data-bs-toggle="tab" role="tab"
+        aria-controls="nav-profile" routerLink="/interes" style="cursor: pointer; ">Interés compuesto</a>
+
+    </div>
+  </nav>
+
+  <div class="grisclaro">
+
+    <br><br>
+
+    <div class="container col-lg-7 bg-white border shadow">
+
+      <div class="container center py-5 px-md-5 mx-auto ">
+
+        <p class="h1 mb-5"> Calcula el cambio de una cotización en porcentaje </p>
+        <h5 class="mb-5"> Introduce la cotización actual y la cotización que tenía en cualquier fecha que te interese.
+        </h5>
+
+        <form [formGroup]="form" (ngSubmit)="save($event)">
+
+          <div class="form-group">
+            <span class="h5"> COTIZACIÓN ACTUAL: </span><br><br>
+            <input type="text" placeholder="Ejemplo: 120" class="form-control mb-4" formControlName="actual">
+          </div>
+
+          <div class="form-group">
+            <span class="h5">COTIZACIÓN PASADA: </span> <br><br>
+            <input type="text" placeholder="Ejemplo: 200" class="form-control mb-4" formControlName="pasada">
+
+
+          </div>
+
+        </form>
+
+        <div class="mt-5" id="escribecotizacion"></div>
+
+      </div>
+
+    </div>
+
+    <div class="my-5">
+      <br>
+    </div>
+
+  </div>

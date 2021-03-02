@@ -1,0 +1,49 @@
+<app-menu></app-menu>
+
+<div class="imagengrande">
+
+    <div class="mb-5">
+        <br>
+        <p class="container text-white h1 my-5"> Inicia sesión o crea una cuenta con tu correo </p>
+    </div>
+
+    <div class="container d-flex justify-content-center">
+        <div class="card col-lg-5 mt-5">
+            <div class="card-header">
+                <ul class="nav nav-tabs justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLink="/login">Iniciar Sesión</a>
+                        <!-- va a login, tiene el active porque está en esta pestaña,
+                    en el registro tendrá el active en la etiqueta de registro -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/registro">Crear Cuenta</a> <!-- va a registro -->
+                    </li>
+
+                </ul>
+            </div>
+            <div class="card-body">
+                <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+                    <div class="form-group">
+                        <label for="nombreUsuario">Nombre de Usuario</label>
+                        <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control"
+                            [(ngModel)]="nombreUsuario" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn boton shadow btn-block" [disabled]="!f.valid">
+                            <i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-5">
+        <br>
+    </div>
+</div>

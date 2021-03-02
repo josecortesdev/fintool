@@ -1,0 +1,109 @@
+<app-menu></app-menu>
+
+
+
+  <div class="mb-5">
+    <br>
+  </div>
+
+  <div class="container">    <!-- Container para todo, cierre al final del todo -->
+
+  <div class="container">
+    <span class="h1 font-weight-bold"> Selección de fondos cotizados </span>
+  </div>
+  <div class="container mt-5 table-responsive">
+    <table class="table table-striped table-hover border">
+      <thead class="thead-dark">
+        <tr>
+          <!-- <th scope="col">Id</th> -->
+          <th scope="col">Nombre</th>
+          <th scope="col">Isin</th>
+          <th scope="col">Ticker</th>
+          <th scope="col">Ter</th>
+          <th scope="col">Ver</th>
+          <th scope="col" *ngIf="!isAdmin">Añadir a cartera</th> <!-- *ngIf="isAdmin" -->
+          <!-- <th scope="col" *ngIf="isAdmin">Duplicar</th> -->
+          <th scope="col" *ngIf="isAdmin">Editar</th> <!-- Si isAdmin es true, saldrán estos dos botones -->
+          <th scope="col" *ngIf="isAdmin">Borrar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of productos">
+          <!-- <th scope="row" class="align-middle">{{producto.id}}</th> -->
+          <td class="align-middle">{{producto.nombre}} </td>
+          <td class="align-middle">{{producto.isin}} </td>
+          <td class="align-middle">{{producto.ticker}} </td>
+          <td class="align-middle"> {{ SistemaEuropeo(producto.ter) }}%</td>
+<!-- {{producto.ter}} -->
+          <td class="align-middle"><button class="btn btn-outline-dark" routerLink="/detalle/{{producto.id}}"><i class="far fa-eye"></i> <!-- Ver --> </button></td>
+          
+          <!-- Aquí lo mismo, si es admin, saldrá -->
+          <!-- *ngIf="isAdmin" -->
+          <td *ngIf="!isAdmin" class="align-middle"><button class="btn boton shadow" (click)="Addcartera(producto.nombre, producto.isin, producto.ticker, producto.ter)"><i class="fas fa-plus"></i> <!--Añadir cartera--> </button></td>
+          <!-- <td *ngIf="isAdmin" class="align-middle"><button class="btn btn-outline-dark" (click)="duplicar(producto.nombre, producto.ter)"><i class="far fa-clone"></i> </button></td> -->
+          <td *ngIf="isAdmin" class="align-middle"><button class="btn btn-outline-dark" routerLink="/editar/{{producto.id}}"><i class="far fa-edit"></i> </button></td>
+          <td *ngIf="isAdmin" class="align-middle"><button class="btn btn-danger" (click)="borrar(producto.id)"><i class="far fa-trash-alt"></i> </button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!--                                 En cartera                                    -->
+    <div class="my-2">
+      <br>
+    </div>
+
+    <div class="mt-5" *ngIf="!isAdmin">
+      <span class="h1 font-weight-bold"> Cartera </span>
+    </div>
+    <div class="mt-5 table-responsive" *ngIf="!isAdmin">  <!-- Para tener cartera, tiene que ser usuario -->
+      <table class="container table table-striped table-hover border">
+        <thead class="thead-dark">
+          <tr>
+            <!-- <th scope="col">Id</th> -->
+            <th scope="col">Nombre</th>
+            <th scope="col">Isin</th>
+            <th scope="col">Ticker</th>
+            <th scope="col">Ter</th>
+            <th scope="col">Ver</th>
+          
+          
+            <th scope="col" *ngIf="isAdmin">Editar</th> <!-- Si isAdmin es true, saldrán estos dos botones -->
+            <th scope="col">Añadir a cartera</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let productoCartera of productosCartera">
+            <!-- <th scope="row" class="align-middle">{{productoCartera.id}}</th> -->
+            <td class="align-middle">{{productoCartera.nombre}} </td>
+            <td class="align-middle">{{productoCartera.isin}} </td>
+            <td class="align-middle">{{productoCartera.ticker}} </td>
+            <td class="align-middle">{{productoCartera.ter}}€</td>
+            <td class="align-middle"><button class="btn btn-outline-dark" routerLink="/detalle/{{productoCartera.id}}"><i class="far fa-eye"></i> <!-- Ver --> </button></td>
+            
+            <!-- Aquí lo mismo, si es admin, saldrá -->
+            <!-- *ngIf="isAdmin" -->
+          
+          
+            <td *ngIf="isAdmin" class="align-middle"><button class="btn btn-outline-dark" routerLink="/editar/{{productoCartera.id}}"><i class="far fa-edit"></i></button></td>
+            <td class="align-middle"><button class="btn btn-danger" (click)="borrar(productoCartera.id)"><i class="far fa-trash-alt"></i> <!-- Eliminar --> </button></td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+      <!-- Botón admin -->
+    <div class="my-3" *ngIf="isAdmin"> <!-- Si es admin, saldrá el botón -->
+      <button class="btn boton shadow btn-lg" routerLink="/nuevo">
+        <i class="fas fa-plus-circle"></i> Nuevo Producto</button> 
+    </div>
+
+  <div class="mb-5">
+    <br>
+  </div>
+
+
+
+</div> <!-- cierre container de todo -->
+
+
+
+
