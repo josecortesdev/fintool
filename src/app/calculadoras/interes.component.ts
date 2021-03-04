@@ -33,11 +33,7 @@ export class InteresComponent implements OnInit {
     });
 
     this.form.valueChanges.pipe(debounceTime(1)).subscribe(value => {
-      console.log(value)
-      console.log('solo la capital ini: ' + value.CapitalInicial);
 
-
-      console.log('probando')
       this.AgregaValores(value.CapitalInicial, value.CapitalExtra, value.Duracion, value.Rentabilidad);
     })
 
@@ -116,7 +112,6 @@ export class InteresComponent implements OnInit {
   save(event: Event) {
     event.preventDefault(); // Queremos hacer una petición asíncrona, que no recargue toda la página
     const value = this.form.value;
-    console.log('probando save: ' + value);
 
   }
 

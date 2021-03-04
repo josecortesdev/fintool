@@ -74,7 +74,6 @@ export class IndexComponent implements OnInit {
 
           let numero = parseFloat(`${indices.MarketRegions[region][n].PercentChange}`)
 
-          console.log('el numero es: ' + numero)
 
           if (numero > 0) {
 
@@ -92,7 +91,6 @@ export class IndexComponent implements OnInit {
 
   CovidAPI() {
 
-    console.log('llega a covidapi')
 
     fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/total?country=Spain", {
       "method": "GET",
@@ -103,7 +101,6 @@ export class IndexComponent implements OnInit {
     })
       .then(rescovid => rescovid.json())
       .then(datoscovid => {
-        console.log(datoscovid);
 
         let confirmed = <HTMLElement>document.querySelector('#confirmed')
         let deaths = <HTMLElement>document.querySelector('#deaths')

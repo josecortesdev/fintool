@@ -46,7 +46,6 @@ export class CotizacionComponent implements OnInit {
     actual = parseFloat(actual);
     pasada = parseFloat(pasada);
 
-    console.log('ha llegado a la funcion agregavalor. Pasada: ' + pasada);
     let myContainer = <HTMLElement>document.querySelector("#escribecotizacion");
 
 
@@ -76,7 +75,6 @@ export class CotizacionComponent implements OnInit {
   save(event: Event) {
     event.preventDefault(); // Queremos hacer una petición asíncrona, que no recargue toda la página
     const value = this.form.value;
-    console.log('probando save: ' + value);
 
   }
 
