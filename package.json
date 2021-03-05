@@ -1,5 +1,4 @@
 {
-  "homepage": "https://josecortesdev.github.io/fintool/",
   "name": "frontfintool",
   "version": "0.0.0",
   "scripts": {
@@ -8,9 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
