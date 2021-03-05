@@ -3,7 +3,6 @@ import { TokenService } from '../service/token.service';
 import { DecimalPipe } from '@angular/common'; // para el decimal
 import { parse } from 'querystring';
 
-//COMENTO EL IndicesAPI y CovidAPI PARA QUE NO LLAME A LA API, QUITO EL COMENTARIO CUANDO LO TENGA LISTO ----------
 
 @Component({
   selector: 'app-index',
